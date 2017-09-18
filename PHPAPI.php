@@ -563,7 +563,7 @@ function GetConversationList($User) {
 		array_push($PossibleConversations, $PossibleConversationObject);
 	}
 	
-	echo json_encode($PossibleConversations);
+	
 	
 	$db = CreateConnectionObject();
 	if($db === false) { ThrowService(); return; }
@@ -573,17 +573,15 @@ function GetConversationList($User) {
 	foreach($PossibleConversations as $conversationObject) {
 		if(ConversationExistsFromString($conversationObject->ConversationName, $db)) {
 			$conversationString = strtolower($conversationObject->ConversationName);
-			echo $conversationString;
+			
 			$stmt = "SELECT * FROM ". $conversationString .";";
 			$query = $db->prepare($stmt);
 			$query->execute();
 			
 			$result = $query->fetchAll(PDO::FETCH_ASSOC);
-			echo json_encode($result);
+			
 			$Conversation = new Conversation($result, $conversationString, $conversationObject->ContactName);
 			array_push($ConversationList, $Conversation);
-		} else {
-			echo "noexisto";
 		}
 	}
 	
