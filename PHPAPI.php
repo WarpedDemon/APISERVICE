@@ -570,6 +570,7 @@ function GetConversationList($User) {
 	foreach($PossibleConversations as $conversationObject) {
 		if(ConversationExistsFromString($conversationObject->ConversationName, $db)) {
 			$conversationString = strtolower($conversationObject->ConversationName);
+			echo $conversationString;
 			$stmt = "SELECT * FROM ". $conversationString .";";
 			$query = $db->prepare($stmt);
 			$query->execute();
