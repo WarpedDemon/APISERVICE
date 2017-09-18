@@ -581,6 +581,8 @@ function GetConversationList($User) {
 			echo json_encode($result);
 			$Conversation = new Conversation($result, $conversationString, $conversationObject->ContactName);
 			array_push($ConversationList, $Conversation);
+		} else {
+			echo "noexisto";
 		}
 	}
 	
