@@ -103,14 +103,14 @@ $_POST['Password'] = "pass";
 $_POST['Message'] = "HELLO THAR";
 $_POST['Request'] = "AcceptFriendRequest";
 $_POST['Contact'] = $Person2;  
-
+*/
 // TEST CHUNK #2 
 $_POST['Username'] = "RightBehindu";
 $_POST['Password'] = "pass";
-$_POST['Request'] = "Login";
+$_POST['Request'] = "AddContactsTemp";
 $_POST['Contact'] = '{"Id":"10","Username":"bill"}';
 $_POST['Message'] = "Hhi";  
- */
+
 
 
  
@@ -611,8 +611,8 @@ function AuthenticateUser($username, $password) {
 //Creates the database object used in many other api functions.
 function CreateConnectionObject() {
 	try {
-		$dsn = "mysql:host=localhost;dbname=appdatabase;charset=utf8;";
-		$db = new PDO($dsn, 'root', 'pass');
+		$dsn = "mysql:host=warpeddemonprince.000webhostapp.com;dbname=id2909794_appdatabase;charset=utf8;";
+		$db = new PDO($dsn, 'id2909794_dbadmin', 'diablo12');
 	}
 	catch(PDOException $e) {
 		//If the database object cannot be instantiated.
