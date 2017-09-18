@@ -562,6 +562,8 @@ function GetConversationList($User) {
 		array_push($PossibleConversations, $PossibleConversationObject);
 	}
 	
+	echo json_encode($PossibleConversations);
+	
 	$db = CreateConnectionObject();
 	if($db === false) { ThrowService(); return; }
 	
