@@ -553,7 +553,7 @@ function GetFriendRequests($User) {
 //Returns a list of conversations for a given user.
 function GetConversationList($User) {
 	$Contacts = json_decode(GetContacts($User['Username'], $User['Password']), true);
-	echo json_encode($Contacts);
+	//echo json_encode($Contacts);
 	$PossibleConversations = array();
 	
 	foreach($Contacts as $contact) {
@@ -575,7 +575,7 @@ function GetConversationList($User) {
 			$query->execute();
 			
 			$result = $query->fetchAll(PDO::FETCH_ASSOC);
-
+			echo json_encode($result);
 			$Conversation = new Conversation($result, $conversationString, $conversationObject->ContactName);
 			array_push($ConversationList, $Conversation);
 		}
