@@ -553,7 +553,7 @@ function GetFriendRequests($User) {
 //Returns a list of conversations for a given user.
 function GetConversationList($User) {
 	$Contacts = json_decode(GetContacts($User['Username'], $User['Password']), true);
-	
+	echo json_encode($Contacts);
 	$PossibleConversations = array();
 	
 	foreach($Contacts as $contact) {
