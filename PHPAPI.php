@@ -449,7 +449,7 @@ function ConversationExists($user, $contact, $db) {
 //Returns whether or not a conversation exists based of a preconstructed conversation name string.
 function ConversationExistsFromString($string, $db) {
 	$string = strtolower($string);
-	$stmt = "SHOW TABLES LIKE " . $string . ";";
+	$stmt = "SHOW TABLES LIKE '" . $string . "';";
 	$query = $db->prepare($stmt);
 	$query->execute();
 	echo "Attempting: " . $string;
