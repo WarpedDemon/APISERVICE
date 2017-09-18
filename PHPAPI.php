@@ -452,9 +452,9 @@ function ConversationExistsFromString($string, $db) {
 	$stmt = "SHOW TABLES LIKE '" . $string . "';";
 	$query = $db->prepare($stmt);
 	$query->execute();
-	echo "Attempting: " + $string;
+	echo "Attempting: " . $string;
 	$result = $query->rowCount();
-	echo ", Got " + $result + " results...";
+	echo ", Got " . $result . " results...";
 	if($result > 0) {
 		return true;
 	} else {
