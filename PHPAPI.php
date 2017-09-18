@@ -652,9 +652,9 @@ function CreateConversationString($nameOne, $nameTwo) {
 	
 	if(strtolower($nameOne[$index]) < strtolower($nameTwo[$index])) {
 
-		return "conversation_" . $nameOne . "_" . $nameTwo;
+		return "conversation_" . strtolower($nameOne) . "_" . strtolower($nameTwo);
 	} else {
-		return "conversation_" . $nameTwo . "_" . $nameOne;
+		return "conversation_" . strtolower($nameTwo) . "_" . strtolower($nameOne);
 	}
 }
 
