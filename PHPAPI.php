@@ -103,7 +103,7 @@ $_POST['Password'] = "pass";
 $_POST['Message'] = "HELLO THAR";
 $_POST['Request'] = "AcceptFriendRequest";
 $_POST['Contact'] = $Person2;  
-
+*/
 // TEST CHUNK #2 
 $_POST['Username'] = "RightBehindu";
 $_POST['Password'] = "pass";
@@ -111,7 +111,7 @@ $_POST['Request'] = "GetConversations";
 $_POST['Contact'] = '{"Id":"10","Username":"bill"}';
 $_POST['Message'] = "Hhi";  
 
-*/
+
 
  
 if($_POST) {
