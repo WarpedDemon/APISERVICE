@@ -614,7 +614,7 @@ function AuthenticateUser($username, $password) {
 function CreateConnectionObject() {
 	try {
 		$dsn = "mysql:host=sql12.freemysqlhosting.net;dbname=sql12195072;charset=utf8;";
-		$db = new PDO($dsn, 'sql12195072', 'SeK2kVry5F');
+		$db = new PDO($dsn, 'sql12197199', 'ULsa4AYelH');
 	}
 	catch(PDOException $e) {
 		//If the database object cannot be instantiated.
