@@ -613,8 +613,8 @@ function AuthenticateUser($username, $password) {
 //Creates the database object used in many other api functions.
 function CreateConnectionObject() {
 	try {
-		$dsn = "223.27.22.124;dbname=04Student_newGlob;charset=utf8;";
-		$db = new PDO($dsn, 'glob', 'new12');
+		$dsn = "mysql:host=sql12.freemysqlhosting.net;dbname=sql12197199;charset=utf8;";
+		$db = new PDO($dsn, 'sql12199828', 'LlV1JWlEmt');
 	}
 	catch(PDOException $e) {
 		//If the database object cannot be instantiated.
