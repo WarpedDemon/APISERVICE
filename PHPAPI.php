@@ -617,7 +617,7 @@ function CreateConnectionObject() {
 	catch(PDOException $e) {
 		//If the database object cannot be instantiated.
 		echo $e->getMessage();
-		return;
+		return false;
 	}
 	
 	if(isset($db)) {
