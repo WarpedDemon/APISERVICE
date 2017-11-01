@@ -621,6 +621,9 @@ function CreateConnectionObject() {
 	}
 	
 	if(isset($db)) {
+		if($db == null) {
+			return false;
+		}
 		return $db;
 	} else {
 		return false;
