@@ -611,7 +611,7 @@ function AuthenticateUser($username, $password) {
 //Creates the database object used in many other api functions.
 function CreateConnectionObject() {
 	try {
-		$dsn = "mysql:host=106.68.129.105;dbname=appdatabase;charset=utf8;";
+		$dsn = "mysql:host=106.68.129.105:3306;dbname=appdatabase;charset=utf8;";
 		$db = new PDO($dsn, 'root', '');
 	}
 	catch(PDOException $e) {
