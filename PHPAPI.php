@@ -234,6 +234,10 @@ if($_POST) {
 	
 	ThrowBadRequest();
 	return;
+} else {
+	
+	echo "This is API, wut r u doin...";
+	
 }
 
 	// API FUNCTIONS //
