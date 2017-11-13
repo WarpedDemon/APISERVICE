@@ -612,7 +612,7 @@ function AuthenticateUser($username, $password) {
 function CreateConnectionObject() {
 	try {
 		$dsn = "mysql:host=223.27.22.124;dbname=DatabaseAppServer;charset=utf8;";
-		$db = new PDO($dsn, 'WarpedPrince', 'yellow12');
+		$db = new PDO($dsn, '04student', 'yellow12');
 	}
 	catch(PDOException $e) {
 		//If the database object cannot be instantiated.
