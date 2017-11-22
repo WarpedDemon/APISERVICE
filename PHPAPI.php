@@ -311,8 +311,10 @@ function SendFriendRequest($User, $Contact) {
 		return false;
 	}
 	
+	return true;
+	
 	if(FriendRequestAlreadySent($User, $Contact, $db)) {
-		echo "not found...2 " . $Contact;
+	//	echo "not found...2 " . $Contact;
 		echo json_encode(new HttpResponse(HttpResponse::STATUS_BAD_REQUEST, "false"));
 		return false;
 	}
