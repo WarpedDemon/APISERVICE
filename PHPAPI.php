@@ -304,11 +304,9 @@ function SendFriendRequest($User, $Contact) {
 	
 	$db = CreateConnectionObject();
 	if($db === false) { ThrowService(); return; }
-	
-	return true;
 
 	if(isFriend($User, $Contact, $db)) {
-		echo "not found...1 " . $Contact;
+		//echo "not found...1 " . $Contact;
 		echo json_encode(new HttpResponse(HttpResponse::STATUS_BAD_REQUEST, "false"));
 		return false;
 	}
