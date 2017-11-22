@@ -332,7 +332,7 @@ function SendFriendRequest($User, $Contact) {
 		echo "Successfully updated " . $result . " rows!";
 		return true;
 	} else {
-		
+		echo "not found... " . $Contact;
 		echo json_encode(new HttpResponse(HttpResponse::STATUS_BAD_REQUEST, "false"));
 		return false;
 	}
@@ -709,6 +709,7 @@ function ThrowSuccess($Status, $Response) {
 
 function ThrowBadRequest() {
 	$HttpResponse = new HttpResponse(HttpResponse::STATUS_BAD_REQUEST, "Bad Request (400)");
+	echo "not found... the fuck?";
 	echo json_encode($HttpResponse);
 }
 // Test Functions //
