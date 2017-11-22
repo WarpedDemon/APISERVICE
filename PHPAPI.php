@@ -304,11 +304,13 @@ function SendFriendRequest($User, $Contact) {
 	if($db === false) { ThrowService(); return; }
 
 	if(isFriend($User, $Contact, $db)) {
+		echo "not found...1 " . $Contact;
 		echo json_encode(new HttpResponse(HttpResponse::STATUS_BAD_REQUEST, "false"));
 		return false;
 	}
 	
 	if(FriendRequestAlreadySent($User, $Contact, $db)) {
+		echo "not found...2 " . $Contact;
 		echo json_encode(new HttpResponse(HttpResponse::STATUS_BAD_REQUEST, "false"));
 		return false;
 	}
@@ -330,7 +332,7 @@ function SendFriendRequest($User, $Contact) {
 		echo "Successfully updated " . $result . " rows!";
 		return true;
 	} else {
-		echo "not found... " . $Contact;
+		
 		echo json_encode(new HttpResponse(HttpResponse::STATUS_BAD_REQUEST, "false"));
 		return false;
 	}
