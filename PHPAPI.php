@@ -211,7 +211,7 @@ if($_POST) {
 		
 		$result = SendFriendRequest($User, $_POST['Contact']);
 		if($result) {
-			echo json_encode(new HttpResponse(HttpResponse.STATUS_ACCEPTED, "true"));
+			echo json_encode(new HttpResponse(HttpResponse::STATUS_ACCEPTED, "true"));
 		} else {
 			return;	
 		}
@@ -304,12 +304,12 @@ function SendFriendRequest($User, $Contact) {
 	if($db === false) { ThrowService(); return; }
 
 	if(isFriend($User, $Contact, $db)) {
-		echo json_encode(new HttpResponse(HttpResponse.STATUS_BAD_REQUEST, "false"));
+		echo json_encode(new HttpResponse(HttpResponse::STATUS_BAD_REQUEST, "false"));
 		return false;
 	}
 	
 	if(FriendRequestAlreadySent($User, $Contact, $db)) {
-		echo json_encode(new HttpResponse(HttpResponse.STATUS_BAD_REQUEST, "false"));
+		echo json_encode(new HttpResponse(HttpResponse::STATUS_BAD_REQUEST, "false"));
 		return false;
 	}
 	
