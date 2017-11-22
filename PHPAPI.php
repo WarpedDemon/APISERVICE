@@ -342,6 +342,8 @@ function SendFriendRequest($User, $Contact) {
 
 //Returns whether or not a user already has sent a friend request to a parsed contact.
 function FriendRequestAlreadySent($User, $Contact, $db) {
+	echo $Contact
+	return true;
 	$stmt = "SELECT * FROM logins WHERE Username=:contact_username";
 	
 	$query = $db->prepare($stmt);
