@@ -209,8 +209,12 @@ if($_POST) {
 			return;
 		}
 		
-		SendFriendRequest($User, $_POST['Contact']);
-		return;
+		$result = SendFriendRequest($User, $_POST['Contact']);
+		if($result) {
+			echo json_encode(new HttpResponse(HttpResponse.STATUS_ACCEPTED, "true"));
+		} else {
+			return;	
+		}
 	}
 	
 	if($Request === "AcceptFriendRequest") {
@@ -300,13 +304,13 @@ function SendFriendRequest($User, $Contact) {
 	if($db === false) { ThrowService(); return; }
 
 	if(isFriend($User, $Contact, $db)) {
-		echo "Bad Request (400) - User is already a friend";
-		return;
+		echo json_encode(new HttpResponse(HttpResponse.STATUS_BAD_REQUEST, "false"));
+		return false;
 	}
 	
 	if(FriendRequestAlreadySent($User, $Contact, $db)) {
-		echo "Bad Request (400) - User has already requested to be friends with this user.";
-		return;
+		echo json_encode(new HttpResponse(HttpResponse.STATUS_BAD_REQUEST, "false"));
+		return false;
 	}
 	
 	$newFriendRequest = array();
@@ -326,6 +330,7 @@ function SendFriendRequest($User, $Contact) {
 		echo "Successfully updated " . $result . " rows!";
 		return true;
 	} else {
+		echo json_encode(new HttpResponse(HttpResponse.STATUS_BAD_REQUEST, "false"));
 		return false;
 	}
 }	
