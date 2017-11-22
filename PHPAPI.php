@@ -236,6 +236,7 @@ if($_POST) {
 		return;
 	}
 	
+	echo $Request;
 	ThrowBadRequest();
 	return;
 } else {
