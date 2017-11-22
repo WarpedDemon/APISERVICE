@@ -103,14 +103,14 @@ $_POST['Password'] = "pass";
 $_POST['Message'] = "HELLO THAR";
 $_POST['Request'] = "AcceptFriendRequest";
 $_POST['Contact'] = $Person2;  
-
+*/
 // TEST CHUNK #2 
 $_POST['Username'] = "RightBehindu";
 $_POST['Password'] = "yellow12";
 $_POST['Request'] = "SendFriendRequest";
-$_POST['Contact'] = '{"Id":"1","Username":"WarpedDemon"}';
+$_POST['Contact'] = '{"Id":"1","Username":"bill"}';
 $_POST['Message'] = "Hhi";  
-*/
+
  
 if($_POST) {
 	//If attempting to access sensitive data which requires user credentials.
