@@ -107,7 +107,7 @@ $_POST['Contact'] = $Person2;
 // TEST CHUNK #2 
 $_POST['Username'] = "RightBehindu";
 $_POST['Password'] = "yellow12";
-$_POST['Request'] = "SendFriendRequest";
+$_POST['Request'] = "FriendRequest";
 $_POST['Contact'] = '{"Id":"1","Username":"bill"}';
 $_POST['Message'] = "Hhi";  
 
