@@ -209,7 +209,7 @@ if($_POST) {
 			return;
 		}
 		
-		$result = SendFriendRequest($User, $_POST['Contact']);
+		$result = SendFriendRequest($User, json_decode($_POST['Contact']));
 		if($result) {
 			echo json_encode(new HttpResponse(HttpResponse::STATUS_ACCEPTED, "true"));
 		} else {
