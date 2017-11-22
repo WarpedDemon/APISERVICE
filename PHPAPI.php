@@ -212,6 +212,7 @@ if($_POST) {
 		$result = SendFriendRequest($User, json_decode($_POST['Contact']));
 		if($result) {
 			echo json_encode(new HttpResponse(HttpResponse::STATUS_ACCEPTED, "true"));
+			return;
 		} else {
 			return;	
 		}
@@ -300,7 +301,7 @@ function UpdateUserRequests($User, $FriendRequests, $db) {
 	
 //Sends a friend request from a user to a parsed contact.
 function SendFriendRequest($User, $Contact) {
-	return true;
+	
 	$db = CreateConnectionObject();
 	if($db === false) { ThrowService(); return; }
 
@@ -309,7 +310,7 @@ function SendFriendRequest($User, $Contact) {
 		echo json_encode(new HttpResponse(HttpResponse::STATUS_BAD_REQUEST, "false"));
 		return false;
 	}
-	
+	return true;
 	if(FriendRequestAlreadySent($User, $Contact, $db)) {
 		echo "not found...2 " . $Contact;
 		echo json_encode(new HttpResponse(HttpResponse::STATUS_BAD_REQUEST, "false"));
