@@ -344,10 +344,7 @@ function FriendRequestAlreadySent($User, $Contact, $db) {
 	
 	$result = $query->fetchAll(PDO::FETCH_ASSOC);
 	
-	if(!$result) {
-		ThrowService();
-		return;
-	}
+
 	$TempFriendRequests = json_decode($result[0]['FriendRequests'], true);
 	if($TempFriendRequests !== null) {
 		foreach($TempFriendRequests as $request) {
