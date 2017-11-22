@@ -316,6 +316,8 @@ function SendFriendRequest($User, $Contact) {
 		return false;
 	}
 	
+	return;
+	
 	$newFriendRequest = array();
 	$newFriendRequest['Id'] = $User['Id'];
 	$newFriendRequest['Username'] = $User['Username'];
