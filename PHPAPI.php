@@ -330,7 +330,7 @@ function SendFriendRequest($User, $Contact) {
 		echo "Successfully updated " . $result . " rows!";
 		return true;
 	} else {
-		echo json_encode(new HttpResponse(HttpResponse.STATUS_BAD_REQUEST, "false"));
+		echo json_encode(new HttpResponse(HttpResponse::STATUS_BAD_REQUEST, "false"));
 		return false;
 	}
 }	
