@@ -404,8 +404,7 @@ function IsFriend($User, $Contact, $db) {
 	$ExistingContactList = GetContacts($User['Username'], $User['Password']);
 	$ContactList = json_decode($ExistingContactList, true);
 	for($i = 0; $i < count($ContactList); $i++) {
-		echo $ContactList[$i]['Username'];
-		echo $Contact->Username;
+
 		if($ContactList[$i]['Username'] === $Contact->Username) {
 			return true;
 		}
