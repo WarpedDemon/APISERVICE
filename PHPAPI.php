@@ -300,7 +300,7 @@ function UpdateUserRequests($User, $FriendRequests, $db) {
 	
 //Sends a friend request from a user to a parsed contact.
 function SendFriendRequest($User, $Contact) {
-	
+	return true;
 	$db = CreateConnectionObject();
 	if($db === false) { ThrowService(); return; }
 
@@ -315,8 +315,6 @@ function SendFriendRequest($User, $Contact) {
 		echo json_encode(new HttpResponse(HttpResponse::STATUS_BAD_REQUEST, "false"));
 		return false;
 	}
-	
-	return;
 	
 	$newFriendRequest = array();
 	$newFriendRequest['Id'] = $User['Id'];
