@@ -310,13 +310,13 @@ function SendFriendRequest($User, $Contact) {
 		echo json_encode(new HttpResponse(HttpResponse::STATUS_BAD_REQUEST, "false"));
 		return false;
 	}
-	return true;
+	
 	if(FriendRequestAlreadySent($User, $Contact, $db)) {
 		echo "not found...2 " . $Contact;
 		echo json_encode(new HttpResponse(HttpResponse::STATUS_BAD_REQUEST, "false"));
 		return false;
 	}
-	
+	return true;
 	$newFriendRequest = array();
 	$newFriendRequest['Id'] = $User['Id'];
 	$newFriendRequest['Username'] = $User['Username'];
