@@ -316,7 +316,7 @@ function SendFriendRequest($User, $Contact) {
 		echo json_encode(new HttpResponse(HttpResponse::STATUS_BAD_REQUEST, "false"));
 		return false;
 	}
-	return true;
+
 	$newFriendRequest = array();
 	$newFriendRequest['Id'] = $User['Id'];
 	$newFriendRequest['Username'] = $User['Username'];
@@ -349,7 +349,7 @@ function FriendRequestAlreadySent($User, $Contact, $db) {
 	
 	$result = $query->fetchAll(PDO::FETCH_ASSOC);
 	
-
+	return true;
 	$TempFriendRequests = json_decode($result[0]['FriendRequests'], true);
 	if($TempFriendRequests !== null) {
 		foreach($TempFriendRequests as $request) {
