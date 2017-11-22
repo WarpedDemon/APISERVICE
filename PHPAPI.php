@@ -310,8 +310,7 @@ function SendFriendRequest($User, $Contact) {
 		echo json_encode(new HttpResponse(HttpResponse::STATUS_BAD_REQUEST, "false"));
 		return false;
 	}
-	
-	return true;
+
 	
 	if(FriendRequestAlreadySent($User, $Contact, $db)) {
 	//	echo "not found...2 " . $Contact;
@@ -344,8 +343,7 @@ function SendFriendRequest($User, $Contact) {
 
 //Returns whether or not a user already has sent a friend request to a parsed contact.
 function FriendRequestAlreadySent($User, $Contact, $db) {
-	echo $Contact
-	return true;
+
 	$stmt = "SELECT * FROM logins WHERE Username=:contact_username";
 	
 	$query = $db->prepare($stmt);
@@ -407,6 +405,8 @@ function RemoveContact($User, $Contact) {
 
 //Returns whether or not a user is friends with a parsed contact.
 function IsFriend($User, $Contact, $db) {
+	echo $Contact;
+	return true;
 	$ExistingContactList = GetContacts($User['Username'], $User['Password']);
 	$ContactList = json_decode($ExistingContactList, true);
 	for($i = 0; $i < count($ContactList); $i++) {
