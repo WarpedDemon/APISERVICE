@@ -301,8 +301,7 @@ function UpdateUserRequests($User, $FriendRequests, $db) {
 	
 //Sends a friend request from a user to a parsed contact.
 function SendFriendRequest($User, $Contact) {
-	echo $Contact;
-	return true;
+
 	$db = CreateConnectionObject();
 	if($db === false) { ThrowService(); return; }
 
